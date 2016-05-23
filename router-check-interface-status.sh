@@ -42,8 +42,8 @@ do
 
         #echo "MAC: $MAC_ADDR"
         echo "IP : $IP_ADDR  --- MAC: $MAC_ADDR"
-        ssh root@compute$i "arp -an | grep $IP_ADDR | grep $MAC_ADDR"
-        FLAG_ARP=$(ssh root@compute$i "arp -an | grep $IP_ADDR | grep $MAC_ADDR | wc -l")
+        ssh root@compute1 "arp -an | grep $IP_ADDR | grep $MAC_ADDR"
+        FLAG_ARP=$(ssh root@compute1 "arp -an | grep $IP_ADDR | grep $MAC_ADDR | wc -l")
         if [ $FLAG_ARP -lt 1 ] ; then
             echo "    ARP entry does not exist....... ERROR"
             NUM_ARP=$(($NUM_ARP + 1))

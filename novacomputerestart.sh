@@ -7,7 +7,7 @@ update_kernel_params() {
         '"
 }
 
-for i in `seq 1 100`;
+for i in `seq 1 2`;
 do
     update_kernel_params compute$i
 done
